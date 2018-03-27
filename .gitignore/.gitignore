@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   cout<<"\t\t\tAhlan ya user ya habibi"<<endl;
+   string space=" ";
+   string character1="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+   string character2="ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba";
+   string plain_message;
+   string cipher_message;
+   cout<< " please enter your plain message :";
+   getline(cin,plain_message);
+   int length=plain_message.size();
+   for (int i=0 ;i<=length ;i++ )
+    {
+        if(plain_message[i]==space[0])
+        {
+                cipher_message=cipher_message+space;
+        }
+        for(int x=51 ;x>=0 ; x--)
+        {
+            if (plain_message[i]==character2[x])
+            {
+                cipher_message=cipher_message+character1[x];
+            }
+        }
+
+    }
+   cout<<"cipher message is :"<<cipher_message<<endl;
+    return 0;
+}
